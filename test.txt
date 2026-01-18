@@ -1,0 +1,12 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "business_site");
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$sql = "INSERT INTO messages (name, email, message) VALUES ('$name', '$email', '$message')";
+$conn->query($sql);
+
+header("Location: index.php");
+?>
